@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:text:title" content="Mission imPOSAble"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://posse-ap.github.io/posse1-hackathon-202202-team2B/html/" />
+  <meta property="og:image" content="https://posse-ap.github.io/posse1-hackathon-202202-team2B/img/opening.png" />
+  <meta property="og:site_name" content="サイトのタイトル" />
+  <meta property="og:description" content="POSSEメンバーが作成した謎解きゲーム。あなたは何分で解けますか？" />
+  <meta name="twitter:card" content="app" />
+  <meta name='twitter:site' content='@posse_program'>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada" rel="stylesheet">
+  <title>Mission imPOSAble</title>
+</head>
+<body class="fade_out">
+  <!-- loading画面 -->
+  <div class="loading_wrapper notClick" id="loading">
+    <div class="loading_container">
+      <h1>Mission imPOSAble</h1>
+      <img src="../img/posseLogotouka.png" alt="posse_logo">
+      <p id="click_me" class="blink">- click to start -</p>
+    </div>
+  </div>
+  <!-- start画面 -->
+  <div class="start_wrapper">
+    <!-- <audio loop autoplay>
+      <source src="../music/moon_travel.mp3" type="audio/mp3">
+    </audio> -->
+    <div class="start_explain">
+      <p class="text_typing">月食を見たいとロケットに乗ったが、地球から192,400km地点でPOSAとの通信が途絶えた。なるべく早くこの謎解きを「全て」クリアして無事地球に帰り「月は赤かった」という言葉を歴史に残そう...
+      </p>
+    </div>
+    <div class="start_button_wrapper">
+      <button id="game_start" onclick="getTime()"><a href="questions.html" class="navigate-anchor">game start</a></button>
+    </div>
+  </div>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../js/time.js"></script>
+</body>
+</html>
