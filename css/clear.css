@@ -1,0 +1,322 @@
+/* さわらび明朝 */
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+
+body{
+    font-family: 'Sawarabi Mincho', sans-serif;
+    background-color: black;
+    width: 100%;
+    /* height: 100vh; */
+    background-image: url('../img/universe.jpeg');
+    background-size: cover;
+}
+
+.clear_ {
+    height: 1400px;
+    /* position: relative; */
+    background-image: url('../img/earth.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.clear_message{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 100px;
+    padding-top: 25vh;
+}
+
+.clear_message p{
+    margin: 50px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.title {
+    height: 110px;
+    font-size: 100px;
+    display: flex;
+    overflow: hidden;
+    color: #C1C4CB;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    justify-content: center;
+}
+
+.title span {
+  display: block;
+  font-size: 2.8rem;
+  transform: translate(0, 105%);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+}
+
+.title.-visible span {
+  transform: translate(0, 0);
+}
+.title span:nth-child(1) {
+  transition-delay: 0.04s;
+}
+.title span:nth-child(2) {
+  transition-delay: 0.06s;
+}
+.title span:nth-child(3) {
+  transition-delay: 0.12s;
+}
+.title span:nth-child(4) {
+  transition-delay: 0.18s;
+}
+.title span:nth-child(5) {
+  transition-delay: 0.24s;
+}
+.title span:nth-child(6) {
+  transition-delay: 0.30s;
+}
+.title span:nth-child(7) {
+  transition-delay: 0.36s;
+}
+.title span:nth-child(8) {
+  transition-delay: 0.42s;
+}
+.title span:nth-child(9) {
+  transition-delay: 0.48s;
+}
+.title span:nth-child(10) {
+  transition-delay: 0.54s;
+}
+.title span:nth-child(11) {
+  transition-delay: 0.6s;
+}
+.title span:nth-child(12) {
+  transition-delay: 0.66s;
+}
+.title span:nth-child(13) {
+  transition-delay: 0.72s;
+}
+.title span:nth-child(14) {
+  transition-delay: 0.78s;
+}
+.title span:nth-child(15) {
+    transition-delay: 0.8s;
+}
+.title span:nth-child(16) {
+    transition-delay: 0.82s;
+}
+
+.clear_comment{
+    width: auto;
+    margin: 0 auto;
+    margin-bottom: 3vh;
+    padding-bottom: 50px;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.under{
+  padding-bottom: 10px;
+  border-bottom: solid 0.5px #ddd;
+}
+
+.clear_share_comment{
+    width: auto;
+    margin: 0 auto;
+    margin-bottom: 3vh;
+    padding-bottom: 50px;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.clear_share_link{
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+    /* position: absolute;
+    bottom: 38%;
+    left: 50%;
+    transform: translate(-50%, 0); */
+}
+
+.clear_share_link img{
+    width: 30px;
+    height: 30px;
+    font-size: large;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+footer{
+  position: fixed;/*←絶対位置*/
+  bottom: 0;
+  left: 45%;
+  width: 100%;
+   /*下に固定*/
+}
+footer p{
+  font-size: 1rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.posse_sns_links{
+  display: flex;
+  gap: 50px;
+  margin-left: 25%;
+}
+.posse_sns_links img{
+  width: 60px;
+}
+
+#splash {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	z-index: 9999999;
+	text-align:center;
+	color:#fff;
+  padding-top: 50vh;
+}
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+
+body{
+    background:#333;/*遷移アニメーションと同じ色を指定*/
+    background-image: url('../img/universe.jpeg');
+    background-size: cover;
+}
+
+body.appear{
+    background:#fff;/*画面を開いた後の背景色を指定*/
+    /* background-image: url('../img/clear.jpg'); */
+    /* background-size: cover; */
+    background-color: black;
+}
+
+.splashbg{
+    display: none;
+	content: "";
+	position:fixed;
+	transform: scale(100);
+	background-color: #fff;/*伸びる背景色の設定*/
+	z-index: 999;
+    /*丸のスタートの形状*/
+    top:calc(50% - 1rem);/*50%から円の半径を引いた値*/
+    left:calc(50% - 1rem);/*50%から円の半径を引いた値*/
+	width: 2rem;
+	height: 2rem;
+  /* background-image: url('../img/universe.jpeg');
+  background-size: cover; */
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+    display: block;
+    border-radius: 50%;	
+	animation-name:PageAnime;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+}
+
+@keyframes PageAnime{
+	0% {/*丸のスタート位置と形状*/
+		transform: scale(100);
+	
+	}
+	100% {/*丸の終了位置と形状*/
+		transform: scale(0);
+		display: none;/*終了時は消える*/
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+.clear_{
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .clear_{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+
+
+
+
+
+
+/* ====================レスポンシブ======================= */
+
+@media screen and (max-width:480px) {
+
+  .clear_ {
+    background-image: url('../img/earth.png');
+    /* height: 118%; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .title span {
+    font-size: 2.3rem;
+  }
+
+  .clear_message{
+    margin-bottom: 100px;
+    padding-top: 20vh;
+}
+
+  .clear_comment{
+    width: auto;
+    margin: 0 auto;
+    margin-bottom: 0.5vh;
+    padding-bottom: 3vh;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.clear_share_link{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.posse_sns_links {
+  gap: 30px;
+  margin-left: 70%;
+}
+
+footer{
+position: fixed;
+bottom: 0;
+width: auto;
+}
+
+.posse_sns_links img{
+  width: 40px;
+}
+
+}
+
+
+
+
+
+
+

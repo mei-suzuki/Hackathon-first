@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+
+body{
+  font-family: 'Sawarabi Mincho', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background: #202020;
+  background-image: url('../img/milkyway.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat repeat; 
+}
+
+button{
+  font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.questions_correct, .questions_incorrect{
+  text-align: center;
+}
+.questions_correct p, .questions_incorrect p{
+  color: #fff;
+}
+
+
+.questions_correct span{
+  color: red;
+  font-weight: bold;
+}
+
+.questions_incorrect span{
+  color: red;
+  font-weight: bold;
+}
+
+
+/* 全体 */
+main {
+  gap: 10%;
+}
+
+/* カウントダウン */
+.questions_countdown_container{
+  width: 100%;
+  height: 100vh;
+  background-image: url('../img/universe.jpeg');
+  background-size: cover;
+/* ローディング中のスクロールを防ぐ */
+  position: fixed;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom:0px;
+}
+
+
+/* テキストのスタイル  */
+.questions_countdown_text {
+  display: block;
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+ 
+
+
+/* 問題画面 */
+.question_base{
+  background: transparent;
+  width: 60%;
+  margin: auto;
+
+}
+.under_line{
+  position: relative;
+  font-size: 40px;
+}
+.under_line:after{
+  position: absolute;
+  content: '';
+  width: 110px;
+  display: inline-block;
+  border-bottom: solid 2px black;
+  bottom: -20px;
+  left: calc(50% - 55px);
+}
+.questions_question_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px auto 30px auto;
+  font-size: 35px;
+  line-height: 150%;
+  background: rgba(255, 255, 255, 0.788);
+  border-radius: 20px;
+}
+.questions_question_container p {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* 提出画面 */
+.questions_submit_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.questions_submit_container input {
+  width: 20%;
+  border-radius: 10px;
+  box-shadow: 0 0 7px gray;
+  border: 1px solid gray;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-bottom: 3%;
+  margin-top: 10px;
+  font-family: 'Sawarabi Mincho', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+.questions_submit_container button {
+  display: block;
+	position: relative;
+	width: 20%;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	background: #fff;
+	border:1px solid black;
+}
+.questions_submit_container button:hover {
+  background: rgba(105, 105, 105, 0.8);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#correct, #incorrect{
+  font-size: 20px;
+  margin: 20px auto 10px auto;
+}
+
+/* ヒント・諦めるボタン画面 */
+.questions_hint_quit_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.questions_hint a, .questions_quit a, .next_question a{
+  display: block;
+	position: relative;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	background: #fff;
+	border:1px solid black;
+  margin-top: 10px;
+}
+.questions_hint, .questions_quit, .next_question {
+  width:20%
+}
+.questions_hint{
+  margin-top: 20px;
+}
+.questions_quit, .next_question{
+  margin-bottom: 30px;
+}
+.questions_hint a:hover, .questions_quit a:hover, .next_question a:hover {
+  background: rgba(105, 105, 105, 0.8);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ヒント画面 */
+.hint_{
+  display: none;
+  text-align: center;
+}
+.hint_ h3{
+  font-size: x-large;
+  font-weight: bold;
+  margin: 5%;
+}
+.hint_ p{
+  font-size: large;
+  margin-bottom: 5%;
+  margin-top: 15px;
+  line-height: 150%;
+  color: #fff;
+}
+.hint_buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hint_try_again a{
+  display: block;
+	position: relative;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	background: rgba(105, 105, 105, 0.8);;
+	color: #fff;
+	border:1px solid black;
+  margin-top: 10px;
+}
+.hint_try_again a:hover{
+  color: rgba(105, 105, 105, 0.8);;
+  background: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+.hint_go_profile{
+  border: none;
+  border-radius: 40px;
+  background: #1da1f2;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 5%;
+}
+.hint_go_profile:hover{
+  opacity: 0.7;
+}
+.hint_go_profile a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+.notClick{
+  pointer-events: none;
+}
+
+/* 「問題はまだ終わってません」セクション  */
+#question4{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 0;
+  width: 650px;
+  height: 300px;
+  margin: 40px auto;
+  padding-bottom: 5%;
+  font-size: 30px;
+  line-height: 150%;
+  color: #fff;
+}
+
+.questions_question_container_plus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto 30px auto;
+  font-size: 35px;
+  line-height: 150%;
+  text-align: center;
+  padding: 15px;
+}
+.questions_question_container p {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 30px;
+}
+.border_cross{
+  margin:2em 0;
+  position: relative;
+  padding: 0.5em 1.5em;
+  border-top: solid 0.5px #fff;
+  border-bottom: solid 0.5px #fff;
+}
+.border_cross:before, .border_cross:after{
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 0.5px;
+  height: -webkit-calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: #fff;
+}
+.border_cross:before {left: 10px;}
+.border_cross:after {right: 10px;}
+.border_cross p {
+  margin: 0; 
+  padding: 0;
+}
+
+/* ⬇︎----------------------------------------------スマホ画面用---------------------------------------------------------⬇︎*/
+@media screen and (max-width:480px){
+
+  .questions_question_container {
+    margin: 60px auto 5px auto;
+  }
+
+  .questions_question_container p {
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .questions_content {
+    margin-top: 0;
+  }
+
+  .under_line:after {
+    bottom: -5px;
+  }
+
+  .questions_submit_container input {
+    width: 70%;
+    padding: 8px 16px;
+    margin-bottom: 3%;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+.questions_submit_container button {
+  width: 70%;
+  padding: 0.5em;
+}
+
+.questions_hint {
+  width: 70%;
+}
+
+.questions_quit {
+  width: 70%;
+}
+.next_question {
+  width: 70%;
+}
+.questions_hint a, .questions_quit a, .next_question a {
+  padding: 0.5em;
+  margin-top: 5px;
+}
+
+.hint_ p {
+  font-size: 12px;
+}
+
+.questions_question_container_plus {
+  margin: 10px auto 30px auto;
+  font-size: 1rem;
+  line-height: 2.5;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+#question4 {
+  padding: 0;
+  height: auto;
+  width: 80%;
+  margin: 0 auto;
+  border: none;
+}
+}
